@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>MMA RPS</title>
+</head>
+<body class="bg-slate-900" onload="doRandom()">
+    <div class="container mx-auto my-3 ">
+        <h1 class="text-center font-mono text-2xl py-3 tracking-wider bg-gradient-to-r from-blue-500 to-red-500 rounded-lg font-extrabold text-slate-50">
+            VIRTUAL MMA WORLD CHAMPIONSHIP</h1>
+            <ul class="bg-slate-300 list-disc list-inside ml-1 p-5 font-sans rounded-lg mt-3">
+                Rules:
+                <li>Each Round, the values of each attack will be randomised.</li>
+                <li>Knock your opponent down, best out of 3!</li>
+                <li>Fighter 1 goes first each round.</li>
+            </ul>
+        <div class="flex flex-row text-center mt-4 space-x-4"> <!-- main flex row-->
+            <div class="player1 basis-1/2 space-y-4 rounded-lg bg-red-200"> <!-- container 1 -->
+                <p id ="fighter_1_name" class="font-mono text-xl border-b-2 border-black bg-red-600 rounded-t-md p-3">
+                    Fighter 1
+                </p>
+                <div id ="result_1" class="py-3 h-20 font-sans">
+                    Select your Attack
+                </div>
+                <div class="p-6 border-t-2 border-black font-sans">
+                    <button id ="0" class="bg-red-900 text-white rounded-md p-3 hover:bg-red-600" value="" onclick="getValue(0)">
+                        Attack 1</button>
+                    <button id ="1" class="bg-red-900 text-white rounded-md p-3 hover:bg-red-600" value="" onclick="getValue(1)">
+                        Attack 2</button>
+                    <button id ="2" class="bg-red-900 text-white rounded-md p-3 hover:bg-red-600" value="" onclick="getValue(2)">
+                        Attack 3</button>
+                </div class="font-sans">
+                Score: <span id = "score_1" class="">0</span>
+            </div>
+            <div class="player2 basis-1/2 space-y-4 bg-blue-200 rounded-lg"> <!-- container 2 -->
+                <p id ="fighter_2_name" class="font-mono text-xl border-b-2 border-black bg-blue-600 rounded-t-md p-3">
+                    Fighter 2
+                </p>
+                <div id = "result_2" class="py-3 h-20 font-sans">
+                    Select your Attack
+                </div>
+                <div class="p-6 border-t-2 border-black font-sans">
+                    <button id ="3" class="bg-blue-900 text-white rounded-md p-3 hover:bg-blue-600" value="" onclick="getValue(3)">
+                        Attack 1</button>
+                    <button id ="4" class="bg-blue-900 text-white rounded-md p-3 hover:bg-blue-600" value="" onclick="getValue(4)">
+                        Attack 2</button>
+                    <button id ="5" class="bg-blue-900 text-white rounded-md p-3 hover:bg-blue-600" value="" onclick="getValue(5)">
+                        Attack 3</button>
+                </div class="font-sans">
+                Score: <span id = "score_2" class="">0</span>
+            </div>
+        </div>
+        <button class="mt-4 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onclick="doRandom()">
+            Next Round</button>
+        <button class="mt-4 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onclick="clearScore()">
+                Clear All</button>
+        <form class="mt-4">
+            <label class="block">
+                <span class="font-sans block text-sm text-white">Fighter 1's Name</span>
+                <input class="rounded-md" type="text" id="fighter_1" name="fighter_1">
+                <button type="button" onclick="changeNames1()" class="mt-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 border border-gray-400 rounded shadow">
+                    Submit</button>
+                <span class="font-sans block text-sm text-white">Fighter 2's Name</span>
+                <input class="rounded-md" type="text" id="fighter_2" name="fighter_2">
+                <button type="button" onclick="changeNames2()" class="mt-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 border border-gray-400 rounded shadow">
+                    Submit</button>
+            </label>
+        </form>
+    </div>
+    <footer class="fixed bottom-0 left-0 z-20 p-4 w-full bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">Created by Sabina © 2022 with Tailwind CSS
+        </span>
+    </footer>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
