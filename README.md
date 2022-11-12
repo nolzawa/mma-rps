@@ -10,3 +10,6 @@ New Round - re-randomise RPS values for both players
 Clear All - clear everything
 
 Still lacking some proper failsafe to prevent fighter 2 from going first or blanking out buttons when an attack had been clicked. Some logic errors behind where if fighter 2 were to click first, the score logic gets launched, by fault of my limited experience with js.
+
+** Update 12 Nov:
+Reduced some redundancies in app.js and streamlined the logic code to make it easier to read.
