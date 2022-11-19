@@ -77,29 +77,19 @@ function checkWin(p1, p2) {
         document.getElementById("result_1").innerHTML += "<p>You tied!</p>";
         document.getElementById("result_2").innerHTML += "<p>You tied!</p>";
     }
-    else if (p1 === "scissors") {
-        if (p2 === "paper") {
-            scoreUpdate(1);
-        }
-        else {
-            scoreUpdate(2);
-        }
+
+    const wintable = {
+        rock: {weak: 'paper', strong: 'scissors'},
+        paper: {weak: 'scissors', strong: 'rock'},
+        scissors: {weak: 'rock', strong: 'paper'}
     }
-    else if (p1 === "paper") {
-        if (p2 === "rock") {
-            scoreUpdate(1);
-        }
-        else {
-            scoreUpdate(2);
-        }
+
+    if (wintable[p1].strong === p2) {
+        scoreUpdate(1);
     }
-    else if (p1 === "rock") {
-        if (p2 === "scissors") {
-            scoreUpdate(1);
-        }
-        else {
-            scoreUpdate(2);
-        }
+
+    if (wintable[p1].weak === p2) {
+        scoreUpdate(2);
     }
 
     //alert to the first player out of 3
@@ -114,34 +104,6 @@ function checkWin(p1, p2) {
     else {
         return false;
     }
-
-    // if (p1 === "scissors" && p2 === "paper") {
-    //     document.getElementById("result_1").innerHTML += "<p>You Won!</p>";
-    //     score_1 += 1;
-    //     document.getElementById("score_1").innerHTML = score_1;
-    // } else if (p2 === "scissors" && p1 === "paper") {
-    //     document.getElementById("result_2").innerHTML += "<p>You Won!</p>";
-    //     score_2 += 1;
-    //     document.getElementById("score_2").innerHTML = score_2;
-    // }
-    // if (p1 === "paper" && p2 === "rock") {
-    //     document.getElementById("result_1").innerHTML += "<p>You Won!</p>";
-    //     score_1 += 1;
-    //     document.getElementById("score_1").innerHTML = score_1;
-    // } else if (p2 === "paper" && p1 === "rock") {
-    //     document.getElementById("result_2").innerHTML += "<p>You Won!</p>";
-    //     score_2 += 1;
-    //     document.getElementById("score_2").innerHTML = score_2;
-    // }
-    // if (p1 === "rock" && p2 === "scissors") {
-    //     document.getElementById("result_1").innerHTML += "<p>You Won!</p>";
-    //     score_1 += 1;
-    //     document.getElementById("score_1").innerHTML = score_1;
-    // } else if (p2 === "rock" && p1 === "scissors") {
-    //     document.getElementById("result_2").innerHTML += "<p>You Won!</p>";
-    //     score_2 += 1;
-    //     document.getElementById("score_2").innerHTML = score_2;
-    // }
 }
 
 function getValue(button) {
